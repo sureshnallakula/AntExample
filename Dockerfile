@@ -2,7 +2,7 @@
 FROM sureshnallakula/ubuntu_tomcat7:latest
 
 # copy war file
-RUN cp C:/Program Files (x86)/Jenkins/workspace/Antbuild_GIT/AntExample/dist/AntExample.war /var/lib/tomcat7/webapps/
+RUN cp C:/Suresh/Git_Repo/AntExample/AntExample.war /var/lib/tomcat7/webapps/
 
 # Expose the default port
 EXPOSE 8080
