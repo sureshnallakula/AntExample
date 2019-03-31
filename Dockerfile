@@ -1,8 +1,22 @@
 # Set the base image to Ubuntu
 FROM sureshnallakula/ubuntu_tomcat7:latest
 
+# Create the default data directory
+RUN mkdir -p /data1/
+
+# switch to new directory
+
+WORKDIR /data1
+
+# perform git clone
+RUN git clone https://github.com/sureshnallakula/AntExample.git
+
+# switch to cloudenabledwebapp directory
+WORKDIR /data1/AntExample/AntExample
+
 # copy war file
-RUN cp C:/Suresh/Git_Repo/AntExample/AntExample.war /var/lib/tomcat7/webapps/
+RUN cp /data1/AntExample/AntExample/AntExample.war /var/lib/tomcat7/webapps/
+
 
 # Expose the default port
 EXPOSE 8080
