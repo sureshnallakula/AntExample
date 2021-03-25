@@ -14,6 +14,9 @@ RUN git clone https://github.com/sureshnallakula/AntExample.git
 # switch to cloudenabledwebapp directory
 WORKDIR /data1/AntExample/AntExample
 
+# Remove existing antexample war
+RUN rm -rf /var/lib/tomcat7/webapps/AntExample.war
+
 # copy war file
 RUN cp /data1/AntExample/AntExample/AntExample.war /var/lib/tomcat7/webapps/
 
